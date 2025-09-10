@@ -6,7 +6,7 @@ const projects = [
   {
     title: "ETHOS",
     subtitle: "UI",
-    img: "/assets/ethos-showcase.png",
+    img: "/assets/tba.png",
     engine: "/assets/unreal.png",
   },
   {
