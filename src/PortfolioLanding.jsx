@@ -43,8 +43,8 @@ export default function PortfolioLanding() {
     <div className="absolute inset-0 bg-black/20"></div>
 
     {/* Hero content */}
-    <div className="relative text-center px-6 md:px-0">
-      <h1 className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg tracking-tight">
+    <div className="relative text-center px- md:px-0">
+      <h1 className="mt-8 text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg tracking-tight">
         TIMO NYS
       </h1>
       <p className="mt-2 text-xl md:text-2xl font-semibold text-yellow-200">
@@ -83,7 +83,7 @@ export default function PortfolioLanding() {
                 <img
                   src={p.engine}
                   alt={`${p.title} engine`}
-                  className="absolute bottom-3 right-3 w-6 h-6 md:w-8 md:h-8 rounded bg-white/80 p-1"
+                  className="absolute bottom-3 right-3 w-8 h-8 md:w-10 md:h-10 rounded bg-white/80 p-1"
                 />
               </article>
             ))}
@@ -114,7 +114,7 @@ export default function PortfolioLanding() {
         <img
           src={p.engine}
           alt={`${p.title} engine`}
-          className="absolute bottom-3 right-3 w-6 h-6 md:w-8 md:h-8 rounded bg-white/80 p-1"
+          className="absolute bottom-3 right-3 w-12 h-12 md:w-10 md:h-10 rounded bg-white/80 p-1"
         />
       </article>
     ))}
@@ -141,12 +141,60 @@ export default function PortfolioLanding() {
         {/* Skills */}
         <section className="mt-10 bg-white rounded-xl p-6 shadow-md">
           <h2 className="text-2xl font-extrabold">SKILLS</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {['Unreal Engine', 'Unity', 'C++', 'C#', 'UI Systems', 'Slate', 'Renderer', 'Tools', 'Wwise'].map((s) => (
-              <span key={s} className="px-3 py-1 rounded-full bg-slate-100 text-sm font-medium">{s}</span>
-            ))}
-          </div>
-        </section>
+            <div className="mt-4 flex flex-wrap gap-4">
+              {[
+                
+                'UI Systems',
+                'Slate',
+                'Renderer',
+                'Tools',
+                'Wwise',
+                ].map((s) => (
+                <span
+                  key={s}
+                    className="px-8 py-3 rounded-full bg-slate-100 text-base md:text-lg font-semibold shadow-sm"
+              >
+              {s}
+                </span>
+    ))}
+  </div>
+</section>
+
+        {/* Languages */}
+        <section className="mt-10 bg-white rounded-xl p-6 shadow-md">
+          <h2 className="text-2xl font-extrabold">LANGUAGES</h2>
+            <div className="mt-4 flex flex-wrap gap-4">
+              {[
+                'C++',
+                'C#',
+                ].map((s) => (
+                <span
+                  key={s}
+                    className="px-8 py-3 rounded-full bg-slate-100 text-base md:text-lg font-semibold shadow-sm"
+              >
+              {s}
+                </span>
+    ))}
+  </div>
+</section>
+
+{/* Tools */}
+        <section className="mt-10 bg-white rounded-xl p-6 shadow-md">
+          <h2 className="text-2xl font-extrabold">TOOLS</h2>
+            <div className="mt-4 flex flex-wrap gap-4">
+              {[
+                'Unreal Engine',
+                'Unity',
+                ].map((s) => (
+                <span
+                  key={s}
+                    className="px-8 py-3 rounded-full bg-slate-100 text-base md:text-lg font-semibold shadow-sm"
+              >
+              {s}
+                </span>
+    ))}
+  </div>
+</section>
 
         {/* Footer */}
         <footer className="mt-12 pb-12 text-center text-sm text-slate-500">
