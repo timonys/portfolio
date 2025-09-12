@@ -30,6 +30,24 @@ const projects = [
   },
 ];
 
+const colorClasses = {
+  cyan: {
+    bg: "bg-cyan-100",
+    text: "text-cyan-800",
+    title: "text-cyan-700",
+  },
+  violet: {
+    bg: "bg-violet-100",
+    text: "text-violet-800",
+    title: "text-violet-700",
+  },
+  orange: {
+    bg: "bg-orange-100",
+    text: "text-orange-800",
+    title: "text-orange-600",
+  },
+};
+
 export default function PortfolioLanding() {
   const navigate = useNavigate();
 
@@ -283,46 +301,60 @@ export default function PortfolioLanding() {
 </section>
 
         {/* Skills Section */}
-        <section className="mt-16 bg-slate-50 rounded-2xl p-10 shadow-md">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl font-extrabold text-indigo-600"
-          >
-            My Abilities
-          </motion.h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "🪄 Superpowers", color: "cyan", items: ["UI Systems", "Slate", "Renderer", "Tools", "Wwise"] },
-              { title: "📖 Spellbook", color: "violet", items: ["C++", "C#"] },
-              { title: "🛠️ Equipment", color: "orange", items: ["Unreal Engine", "Unity"] },
-            ].map((group) => (
-              <motion.div
-                key={group.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <h3 className={`text-lg font-bold text-${group.color}-700 mb-3`}>{group.title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((s) => (
-                    <motion.span
-                      key={s}
-                      whileHover={{ scale: 1.1 }}
-                      className={`px-4 py-2 rounded-full bg-${group.color}-100 text-${group.color}-800 font-semibold text-sm shadow-sm`}
-                    >
-                      {s}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+<section className="mt-16 bg-slate-50 rounded-2xl p-10 shadow-md">
+  <motion.h2
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="text-3xl font-extrabold text-indigo-600"
+  >
+    My Abilities
+  </motion.h2>
 
+  <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    {[
+      { 
+        title: "🪄 Superpowers", 
+        styles: { title: "text-cyan-700", badge: "bg-cyan-100 text-cyan-800" }, 
+        items: ["UI Systems", "Slate", "Renderer", "Tools", "Wwise"] 
+      },
+      { 
+        title: "📖 Spellbook", 
+        styles: { title: "text-violet-700", badge: "bg-violet-100 text-violet-800" }, 
+        items: ["C++", "C#"] 
+      },
+      { 
+        title: "🛠️ Equipment", 
+        styles: { title: "text-orange-600", badge: "bg-orange-100 text-orange-800" }, 
+        items: ["Unreal Engine", "Unity"] 
+      },
+    ].map((group) => (
+      <motion.div
+        key={group.title}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h3 className={`text-lg font-bold mb-3 ${group.styles.title}`}>
+          {group.title}
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {group.items.map((s) => (
+            <motion.span
+              key={s}
+              whileHover={{ scale: 1.1 }}
+              className={`px-4 py-2 rounded-full ${group.styles.badge} font-semibold text-sm shadow-sm`}
+            >
+              {s}
+            </motion.span>
+          ))}
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
         {/* Footer */}
         <motion.footer
           className="mt-16 pb-12 text-center text-sm text-slate-500"
